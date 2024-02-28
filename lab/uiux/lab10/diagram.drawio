@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" modified="2024-02-20T04:39:37.863Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="ApKf2ghnHu9smeS1pHdY" version="23.1.5" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="396" dy="409" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="I2u_mY02L-ip5zcrB-1J-0" value="Document" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="205" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I2u_mY02L-ip5zcrB-1J-2" value="Root Element:&lt;br&gt;&amp;lt;html&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="319" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I2u_mY02L-ip5zcrB-1J-3" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="I2u_mY02L-ip5zcrB-1J-2" target="I2u_mY02L-ip5zcrB-1J-0">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="214" y="324" as="sourcePoint" />
+            <mxPoint x="264" y="274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I2u_mY02L-ip5zcrB-1J-5" value="Element:&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;lt;body&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="411" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I2u_mY02L-ip5zcrB-1J-6" value="Element:&lt;br&gt;&amp;lt;div&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="498" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
