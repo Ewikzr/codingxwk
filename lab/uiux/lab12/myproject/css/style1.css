@@ -1,0 +1,25 @@
+body {
+    display: block;
+    padding-top: 5%;
+}
+
+img {
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    height: 35%;
+}
+
+span {
+    font-family: "Noto Serif Thai", serif;
+    color: #6930C3;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+p {
+    font-family: "Krub", serif;
+    font-size: larger;
+    font-weight: bold;
+}
