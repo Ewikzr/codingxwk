@@ -1,0 +1,13 @@
+.thumbnail {
+    width: 350px;
+    height: auto;
+}
+
+.video-author {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+span {
+    font-weight: bolder;
+}
