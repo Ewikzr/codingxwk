@@ -1,0 +1,53 @@
+* {
+    font-family: 'Krub', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    justify-content: center;
+    text-align: center;
+    margin-top: 8%;
+
+    & .logo {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        object-fit: cover;
+
+        & img {
+            width: 400px;
+            height: auto;
+        }
+    }
+
+    & .search {
+        input {
+            padding: 15px;
+            width: 800px;
+            height: 28px;
+            font-weight: bold;
+            font-size: medium;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 3px 2px 12px 0px rgba(0,0,0,0.15);
+            margin: 15px 0px;
+            outline: none;
+        }
+
+        input:focus::placeholder {
+            color: transparent;
+          }
+    }
+
+    & .btn {
+        input {
+            border: none;
+            font-weight: bolder;
+            font-size: medium;
+            padding:15px 20px;
+            margin: 5px 10px;
+        }
+
+    }
+}
