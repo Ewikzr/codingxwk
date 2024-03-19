@@ -1,0 +1,56 @@
+* {
+    font-family: "Sarabun", sans-serif;
+}
+
+.flexbox {
+display: flex;
+background-color: rgba(3,112,202,255);
+flex-direction: row;
+align-items: center;
+border-style: none;
+height: 50px;
+width: fit-content;
+padding: 0px 15px;
+}
+
+.home {
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.home:hover {
+    color: gray;
+    cursor: pointer;	
+}
+
+.search-bar {
+    & input {
+        width: 500px;
+        height: auto;
+        border: 0px solid;
+        border-radius: 50px;
+        margin: 10px;
+        padding-left: 10px;
+        outline: none;
+    }
+
+    & input:focus::placeholder {
+        color: transparent;
+    }
+}
+
+.search-btn {
+    & button {
+        color: white;
+        background-color: rgba(3,112,202,255);
+        border: 1px white solid;
+        padding: 3px 15px;
+
+    }
+
+    & button:hover {
+        cursor: pointer;
+        background-color: mediumpurple;
+    }
+}
