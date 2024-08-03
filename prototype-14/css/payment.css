@@ -1,0 +1,61 @@
+.pending-payment {
+    margin-top: 180px;
+    text-align: center;
+}
+
+#nav-text {
+    font-size: x-large;
+    color: white;
+    font-weight: bolder;
+  }
+
+.back-home {
+  width: 300px;
+  padding: 15px;
+  background-color: #ff7c7c;
+  border: none;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.back-home:hover {
+  background-color: #ff4c4c;
+}
+.my-order {
+  width: 300px;
+  padding: 15px;
+  background-color: #ff7c7c;
+  border: none;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
+.my-order:hover {
+  background-color: #ff4c4c;
+}
+
+#loading-bar-spinner.spinner {
+    left: 50%;
+    margin-left: -20px;
+    top: 25%;
+    margin-top: -20px;
+    position: absolute;
+    z-index: 19 !important;
+    animation: loading-bar-spinner 400ms linear infinite;
+}
+
+#loading-bar-spinner.spinner .spinner-icon {
+    width: 40px;
+    height: 40px;
+    border:  solid 4px transparent;
+    border-top-color:  #00C8B1 !important;
+    border-left-color: #00C8B1 !important;
+    border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
+

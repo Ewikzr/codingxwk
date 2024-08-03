@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecondHand Market</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn-icons-png.flaticon.com/512/10203/10203884.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/necklace.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="./index.html">
+            <img
+              src="./images/logo.png"
+              alt="logo"
+              width="52px"
+              height="52px"
+            />
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <div class="search-container">
+            <input type="text" placeholder="สร้อยคอผู้หญิง" name="search" />
+            <i class="fa fa-search"></i>
+          </div>
+        </ul>
+
+        <div class="cart">
+          <a href="./cart.html">
+            <span class="material-symbols-outlined"> shopping_cart </span>
+          </a>
+          <a href="./favorite.html">
+            <span class="material-symbols-outlined"> favorite </span>
+          </a>
+          <a href="./profile.html">
+            <span class="material-symbols-outlined"> person </span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-navbar">
+          <select name="Category" id="Category">
+            <option value="choose">All Category</option>
+            <option value="food">อาหาร</option>
+            <option value="camera">กล้องถ่ายภาพ</option>
+            <option value="techno">อุปกรณ์มือถือ</option>
+            <option value="shoe">รองเท้า</option>
+            <option value="decorations">ของตกแต่ง</option>
+          </select>
+          <button type="button">
+            <span class="material-symbols-outlined"> location_on </span>Track
+            Orders
+          </button>
+          <button type="button">
+            <span class="material-symbols-outlined"> help </span>Help
+          </button>
+        </div>
+      </section>
+
+      <div class="content">
+        <section id="aside" class="aside">
+          <strong>
+            <div class="filter-container">
+              <span class="material-symbols-outlined">filter_alt</span>
+              SEARCH FILTER
+            </div>
+          </strong>
+          <p>Service & Promotion</p>
+
+          <input type="checkbox" id="check1" name="check1" value="Discount" />
+          <label for="check1"> Discount</label><br />
+          <input
+            type="checkbox"
+            id="check2"
+            name="check2"
+            value="Free Shipping"
+          />
+          <label for="check2"> Free Shipping</label><br />
+          <input type="checkbox" id="check3" name="check3" value="With Video" />
+          <label for="check3"> With Video</label><br />
+          <input
+            type="checkbox"
+            id="check4"
+            name="check4"
+            value="Ready Stock"
+          />
+          <label for="check4"> Ready Stock</label><br />
+          <input type="checkbox" id="check5" name="check5" value="Pre-Order" />
+          <label for="check5"> Pre-Order</label><br />
+          <input
+            type="checkbox"
+            id="check6"
+            name="check6"
+            value="Fast Shipping"
+          />
+          <label for="check6"> Fast Shipping</label><br />
+        </section>
+
+        <section id="products-list" class="products-list">
+          <div class="sortby">
+            Sort by:
+            <select name="sortby" id="sortby">
+              <option value="most">Most Popular</option>
+              <option value="min">Min Popular</option>
+            </select>
+          </div>
+          <div class="results">
+            <p><div id="results-count"></div> Results</p>
+          </div>
+          <section id="products" class="products">
+            <div class="product-list">
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+              <div class="product-item">
+                <img src="./images/necklace.jpg" alt="necklace.jpg" />
+                <p>สร้อยคอผู้หญิง</p>
+                <p id="price">฿ 100</p>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/necklace.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,131 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header nav {
+  background-color: #ff7c7c;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+header .logo img {
+  margin-right: 10px;
+}
+
+#nav-text {
+  font-size: x-large;
+  color: white;
+  font-weight: bolder;
+}
+
+main {
+  padding: 20px;
+}
+
+#content-text,
+#orders-text,
+#payment-text {
+  color: #ff7c7c;
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+
+#content-address {
+  margin-bottom: 20px;
+}
+
+.change-adds {
+  display: inline;
+  color: #ff7c7c;
+  cursor: pointer;
+}
+
+.orders,
+.payment,
+.summary,
+.place-order {
+  margin-bottom: 20px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.order-details p,
+.order-price p {
+  margin: 0;
+}
+.order-price p {
+  font-weight: bold;
+}
+
+.order-details img {
+  width: 250px;
+  height: auto;
+}
+
+.payment {
+  display: flex;
+  align-items: center;
+}
+
+#payment-text {
+  margin-right: 20px;
+}
+
+.payment-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.payment-options button {
+  padding: 10px 20px;
+  background-color: #ff7c7c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.payment-options button:hover {
+  background-color: #ff4c4c;
+}
+
+#place-order-btn {
+  width: 350px;
+  padding: 15px;
+  background-color: #ff7c7c;
+  border: none;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
+
+#place-order-btn:hover {
+  background-color: #ff4c4c;
+}
+
+.summary {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.place-order {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#price-total {
+  color: #ff7c7c;
+  font-size: x-large;
+  font-weight: bold;
+}

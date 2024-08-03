@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecondHand Market</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn-icons-png.flaticon.com/512/10203/10203884.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/checkout.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="./index.html">
+            <img
+              src="./images/logo.png"
+              alt="logo"
+              width="52px"
+              height="52px"
+            />
+          </a>
+        </div>
+        <p id="nav-text">Checkout</p>
+      </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <div class="content-text">
+                <p id="content-text">
+                    Delivery Address
+                </p>
+                <p id="content-address">
+                    <b>สมฤดี เจริญกรุง</b> (+66)99-999-9999  แมนชั่นเจริญกรุง 111 เขต 111 แขวง 111 จังหวัดกรุงเทพมหานคร
+                    <div class="change-adds">Change Address</div>
+                </p>
+            </div>
+        </section>
+
+        <section class="orders">
+            <p id="orders-text">Product Ordered</p>
+            <div class="order-item">
+                <div class="order-details">
+                    <img src="./images/necklace.jpg" alt="necklace.jpg">
+                    <p>ร้านค้า : สมพร</p>
+                    <p>สร้อยคอผู้หญิง</p>
+                </div>
+                <div class="order-price">
+                    <p>฿100</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment">
+            <p id="payment-text">Payment Method:</p>
+            <div class="payment-options">
+                <button>Mobile Banking</button>
+                <button>Credit</button>
+                <button>QR Code</button>
+            </div>
+        </section>
+
+        <section class="summary">
+            <p>Merchandise Subtotal: ฿100</p>
+            <p>Shipping Total: ฿40</p>
+            <p>Total Payment: <span id="price-total">฿140</span></p>
+        </section>
+
+        <section class="place-order">
+            <a href="./payment.html"><button id="place-order-btn">Place Order</button></a>
+        </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <!-- <script src="./js/checkout.js"></script> -->
+  </body>
+</html>

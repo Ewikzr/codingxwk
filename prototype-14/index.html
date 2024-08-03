@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecondHand Market</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn-icons-png.flaticon.com/512/10203/10203884.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><a href="./index.html">
+          <img
+            src="./images/logo.png"
+            alt="logo"
+            width="52px"
+            height="52px"
+          />
+        </a>
+        </div>
+
+        <ul class="nav-links">
+            <div class="search-container">
+                <input type="text" placeholder="Search.." name="search" />
+                <i class="fa fa-search"></i>
+            </div>
+        </ul>
+        
+        <div class="cart">
+          <a href="./cart.html">
+            <span class="material-symbols-outlined"> shopping_cart </span>
+          </a>
+          <a href="./favorite.html">
+            <span class="material-symbols-outlined"> favorite </span>
+          </a>
+          <a href="./profile.html">
+            <span class="material-symbols-outlined"> person </span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-navbar">
+          <select name="Category" id="Category">
+            <option value="choose">All Category</option>
+            <option value="food">อาหาร</option>
+            <option value="camera">กล้องถ่ายภาพ</option>
+            <option value="techno">อุปกรณ์มือถือ</option>
+            <option value="shoe">รองเท้า</option>
+            <option value="decorations">ของตกแต่ง</option>
+          </select>
+          <button type="button">
+            <span class="material-symbols-outlined"> location_on </span>Track
+            Orders
+          </button>
+          <button type="button">
+            <span class="material-symbols-outlined"> help </span>Help
+          </button>
+        </div>
+      </section>
+
+      <section id="recommends" class="recommends">
+        <div class="recommends-first">
+            <img src="./images/watch.jpg" alt="watch" />
+        </div>
+        <div class="recommends-item">
+            <div class="recommends-second">
+                <img src="./images/watch.jpg" alt="watch" />
+            </div>
+            <div class="recommends-second">
+                <img src="./images/watch.jpg" alt="watch" />
+            </div>
+        </div>
+    </section>
+    
+
+      <section id="groups" class="groups">
+        <h2>Top Products</h2>
+        <div class="group-list">
+          <div class="group-item">
+            <img src="./images/cat-food.jpg" alt="cat-food.jpg" />
+            <p>อาหารแมว</p>
+          </div>
+
+          <div class="group-item">
+            <img src="./images/camera-canon.jpg" alt="camera-canon.jpg" />
+            <p>กล้อง</p>
+          </div>
+
+          <div class="group-item">
+            <img src="./images/ipad.jpg" alt="ipad.jpg" />
+            <p>ไอแพด</p>
+          </div>
+
+          <div class="group-item">
+            <img src="./images/shoe.jpg" alt="shoe.jpg" />
+            <p>รองเท้า</p>
+          </div>
+
+          <div class="group-item"><a href="./necklace.html">
+            <img src="./images/necklace.jpg" alt="necklace.jpg" />
+            <p>สร้อยคอ</p>
+          </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 SecondHand Market. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

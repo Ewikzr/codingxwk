@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecondHand Market</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn-icons-png.flaticon.com/512/10203/10203884.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/item.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="./index.html">
+            <img
+              src="./images/logo.png"
+              alt="logo"
+              width="52px"
+              height="52px"
+            />
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <div class="search-container">
+            <input type="text" placeholder="สร้อยคอผู้หญิง" name="search" />
+            <i class="fa fa-search"></i>
+          </div>
+        </ul>
+
+        <div class="cart">
+          <a href="./cart.html">
+            <span class="material-symbols-outlined"> shopping_cart </span>
+          </a>
+          <a href="./favorite.html">
+            <span class="material-symbols-outlined"> favorite </span>
+          </a>
+          <a href="./profile.html">
+            <span class="material-symbols-outlined"> person </span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-navbar">
+          <select name="Category" id="Category">
+            <option value="choose">All Category</option>
+            <option value="food">อาหาร</option>
+            <option value="camera">กล้องถ่ายภาพ</option>
+            <option value="techno">อุปกรณ์มือถือ</option>
+            <option value="shoe">รองเท้า</option>
+            <option value="decorations">ของตกแต่ง</option>
+          </select>
+          <button type="button">
+            <span class="material-symbols-outlined"> location_on </span>Track
+            Orders
+          </button>
+          <button type="button">
+            <span class="material-symbols-outlined"> help </span>Help
+          </button>
+        </div>
+      </section>
+
+      <div class="content">
+        <div class="content-image">
+          <img src="./images/necklace.jpg" alt="necklace.jpg" />
+        </div>
+      
+        <div class="content-main">
+          <div class="content-details">
+            <div class="content-header">
+              <strong>สร้อยคอผู้หญิง</strong>
+              <span id="favorite" class="material-symbols-outlined"> favorite </span>
+            </div>
+            <div class="content-score">
+              5.0 <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+            </div>
+            <div class="description">
+              <p>
+                Description: ส่งต่อสร้อยคอเครื่องประดับ ใส่ครั้งเดียว
+                เหมาะกับทุกชุด
+              </p>
+              <p id="price">฿ 100</p>
+            </div>
+            <div class="quantity">
+              Quantity
+              <input type="number" id="quantity" name="quantity" min="1" max="5" />
+            </div>
+            <div class="content-btn">
+              <button id="btn-add">Add To Cart</button>
+              <a href="./checkout.html"><button id="btn-buy">Buy NOW</button></a>
+            </div>
+          </div>
+      
+          <div class="content-profile">
+            <img src="./images/logo-cat.jpg" alt="logo-cat" />
+            <div id="content-profile-text">
+              <p>สมพร</p>
+              <p>Rate: 4.5/5</p>
+            </div>
+            <button id="btn-follow">Follow</button>
+          </div>
+        </div>
+      </div>
+      
+      
+    </main>
+
+    <script src="./js/script.js"></script>
+    <!-- <script src="./js/item.js"></script> -->
+  </body>
+</html>
