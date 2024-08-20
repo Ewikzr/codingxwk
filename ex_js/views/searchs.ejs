@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SecondHand Market</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+    <link rel="stylesheet" href="/stylesheets/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-orange">
+        <a class="navbar-brand" href="/">SecondHand Market</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">หน้าแรก <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/carts">ตะกร้าสินค้า</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/registers">ลงทะเบียน</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0" onsubmit="handleSearch(event)">
+            <input class="form-control mr-sm-2" type="text" placeholder="ค้นหาสินค้า" aria-label="ค้นหาสินค้า" id="search-input">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ค้นหา</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+      <div class="container marketing">
+
+        <section id="products-list" class="products-list">
+          <div class="results">
+            <p><div id="results-count"></div> Results</p>
+          </div>
+
+          <div class="filter-search-container">
+            <span style="font-size: x-large;">เรียงโดย:</span>
+            <button class="btn-primary">ยอดนิยม</button>
+            <button class="btn-success">ล่าสุด</button>
+            <select name="price" id="price">
+              <option value="asc">ราคา: จากน้อยไปมาก</option>
+              <option value="desc">ราคา: จากมากไปน้อย</option>
+            </select>
+          </div>
+        </section>
+        <br/><br/><br/>
+        <div class="row" id="category-container">
+        </div>
+
+      </div>
+    </main>
+    <script>
+      function handleSearch(event) {
+        event.preventDefault();
+        const searchTerm = document.getElementById('search-input').value;
+        window.location.href = `/searchs?product=${encodeURIComponent(searchTerm)}`;
+      }
+
+      async function searchProduct(product) {
+        let render = "";
+        const response = await fetch(`http://localhost:3000/products/search/`,
+        {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ product: product })
+        });
+        if(response.status == 200) {
+          const data = await response.json();
+          console.log(data);
+
+          for(const product of data) {
+            render += `
+              <div class="col-lg-4 product-item" data-product-id="${product.id}">
+                <img src="${product.image}" width="140" height="140" class="rounded-circle" alt="${product.image}">
+                <h4>${product.product_name}</h4>
+                <h5>${product.price}฿</h5>
+              </div>
+            `;
+          }
+          document.getElementById("category-container").innerHTML = render;
+
+          const productItems = document.querySelectorAll('.product-item');
+          productItems.forEach(item => {
+            const productName = item.querySelector('h4').textContent;
+            if (productName === 'สร้อยคอผู้หญิง') {
+              item.addEventListener('click', () => {
+                window.location.href = '/carts';
+              });
+            }
+          });
+        }
+      }
+
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      const product = getQueryParam('product');
+      if (product) {
+        searchProduct(product);
+      }
+    </script>
+
+    <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/javascripts/jquery-3.3.1.slim.min.js"><\/script>')</script>
+    <script src="/javascripts/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

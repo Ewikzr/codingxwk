@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SecondHand Market</title>
+    <link rel="canonical"
+        href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+    <link rel="stylesheet" href="/stylesheets/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-orange">
+            <a class="navbar-brand" href="/">SecondHand Market</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">หน้าแรก </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/carts">ตะกร้าสินค้า</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registers">ลงทะเบียน <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0"
+                    onsubmit="handleSearch(event)">
+                    <input class="form-control mr-sm-2" type="text"
+                        placeholder="ค้นหาสินค้า" aria-label="ค้นหาสินค้า"
+                        id="search-input">
+                    <button class="btn btn-outline-success my-2 my-sm-0"
+                        type="submit">ค้นหา</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        <div class="container marketing">
+            <div class="register">
+                <br><br>
+                <h3 class="text-center mb-4">ลงทะเบียน</h3>
+                <form action="/register" class="mx-auto"
+                    style="max-width: 400px;" method="POST">
+                    <div class="form-group mb-3 text-center">
+                        <div class="file-input-container"
+                            style="position: relative; display: inline-block; width: 200px; height: 200px; border: 1px solid #ccc;">
+                            <input type="file" id="profile-picture"
+                                name="profile_picture"
+                                style="opacity: 0; position: absolute; width: 100%; height: 100%; z-index: 2; cursor: pointer;">
+                            <div
+                                style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;">
+                                <span style="font-size: 2rem;">+</span>
+                            </div>
+                        </div><br/>
+                        <label for="profile-picture" class="form-label mt-2">อัปโหลดรูปโปรไฟล์</label>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" name="username"
+                            placeholder="ชื่อผู้ใช้" required>
+                    </div>
+                    <div class="form-group mb-3 d-flex">
+                        <input type="text" class="form-control me-2" name="tel"
+                            placeholder="หมายเลขโทรศัพท์">
+                        <button type="button" class="btn btn-primary w-50"
+                            onclick="generateOTP()">ส่ง OTP</button>
+                    </div>
+                    <div class="form-group mb-3 d-flex">
+                        <input type="text" class="form-control me-2" name="otp"
+                            placeholder="ยืนยันรหัส OTP">
+                        <button type="button" class="btn btn-primary w-50"
+                            onclick="checkOTP()">ตรวจสอบ</button>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="password" class="form-control"
+                            name="setpassword" placeholder="ตั้งรหัสผ่าน">
+                    </div>
+                    <div class="form-group mb-4">
+                        <input type="password" class="form-control"
+                            name="verpassword" placeholder="ยืนยันรหัสผ่าน">
+                    </div>
+                    <button type="button" class="btn btn-success w-100"
+                        onclick="redirectToLogin()">ยืนยันและเข้าสู่ระบบ</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        async function loadTopWeekProducts(limit) {
+            let render = "";
+            const response = await fetch(
+                `http://localhost:3000/products/top-week/`, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        limit: limit
+                    })
+                }
+            );
+            if (response.status == 200) {
+                const data = await response.json();
+                console.log(data);
+                for (const product of data) {
+                    render += `
+          <div class="col-lg-4">
+            <img src="${product.image}" width="140" height="140" class="rounded-circle" alt="${product.image}">
+            <h4>${product.product_name}</h4>
+            <h5>${product.price}฿</h5>
+          </div>
+        `;
+                }
+                document.getElementById("top-week-container").innerHTML =
+                    render;
+            }
+        }
+        loadTopWeekProducts(3);
+        function handleSearch(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('search-input').value;
+            window.location.href =
+                `/searchs?product=${encodeURIComponent(searchTerm)}`;
+        }
+        let otpCode = '';
+        function generateOTP() {
+            otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+            const existingAlert = document.querySelector('.register .alert');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-info fade show';
+            alertDiv.setAttribute('role', 'alert');
+            alertDiv.innerHTML = `รหัส OTP คือ: ${otpCode}`;
+            document.querySelector('.register').appendChild(alertDiv);
+            const otpInputField = document.querySelector('input[name="otp"]');
+            otpInputField.value = otpCode;
+            setTimeout(() => {
+                alertDiv.classList.remove('show');
+                alertDiv.classList.add('fade');
+                setTimeout(() => alertDiv.remove(), 500);
+            }, 1500);
+        }
+        function checkOTP() {
+            const userOtp = document.querySelector('input[name="otp"]').value;
+            const otpInput = document.querySelector('input[name="otp"]');
+            const checkButton = document.querySelector(
+                'button[onclick="checkOTP()"]');
+            const existingAlert = document.querySelector('.register .alert');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+            let alertDiv;
+            if (userOtp === otpCode) {
+                otpInput.classList.add('input-correct');
+                checkButton.classList.add('btn-correct');
+                checkButton.textContent = 'ถูกต้อง';
+                alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-success fade show';
+                alertDiv.setAttribute('role', 'alert');
+                alertDiv.innerHTML = 'รหัส OTP ถูกต้อง';
+            } else {
+                alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-danger fade show';
+                alertDiv.setAttribute('role', 'alert');
+                alertDiv.innerHTML = 'รหัส OTP ไม่ถูกต้องโปรดใส่ใหม่.';
+            }
+            document.querySelector('.register').appendChild(alertDiv);
+            setTimeout(() => {
+                alertDiv.classList.remove('show');
+                alertDiv.classList.add('fade');
+                setTimeout(() => alertDiv.remove(), 500);
+            }, 1500);
+        }
+        function redirectToLogin() {
+            window.location.href = 'http://localhost:3000/login';
+        }
+    </script>
+    <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        window.jQuery || document.write(
+            '<script src="/javascripts/jquery-3.3.1.slim.min.js"><\/script>'
+        )
+    </script>
+    <script src="/javascripts/bootstrap.bundle.min.js""></script></body>
+</html>

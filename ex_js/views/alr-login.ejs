@@ -1,0 +1,183 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SecondHand Market</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+    <link rel="stylesheet" href="/stylesheets/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-orange">
+        <a class="navbar-brand" href="/">SecondHand Market</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">หน้าแรก <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/carts">ตะกร้าสินค้า</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/sellers">เริ่มต้นการขาย</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="/registers">ลงทะเบียน</a>
+            </li> -->
+          </ul>
+          <div class="ml-auto d-flex align-items-center">
+            <span class="text-white pr-3">
+              <img class="img-fluid rounded-circle" src="http://localhost:3000/images/user_images/somporn.png" alt="somporn.png" style="height: 50px; width: 50px;">
+
+              ยินดีต้อนรับ คุณ <b>Somporn</b>!</span>
+            <form class="form-inline mt-2 mt-md-0" onsubmit="handleSearch(event)">
+              <input class="form-control mr-sm-2" type="text" placeholder="ค้นหาสินค้า" aria-label="ค้นหาสินค้า" id="search-input">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ค้นหา</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    
+</header>
+
+<main role="main">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/images/promotion.png">
+        <div class="container">
+          <div class="carousel-caption text-left">
+
+          
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/promotion_02.png">
+        <div class="container">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/images/promotion_03.png">
+        <div class="container">
+          <div class="carousel-caption text-right">
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">ย้อนกลับ</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">ต่อไป</span>
+    </a>
+  </div>
+
+
+  <div class="container marketing">
+    <h2 class="container my-xl-5">ขายดีประจำสัปดาห์</h2>
+
+
+    <div class="row" id="top-week-container">
+    </div>
+
+    <div class="container marketing">
+      <h2 class="container my-xl-5">หมวดหมู่สินค้า</h2>
+  
+  
+      <div class="row" id="category-container">
+        <div class="col-lg-4">
+          <img src="/images/clothes_03.jpg" width="140" height="140" class="rounded-circle" >
+          <h4>เครื่องแต่งกาย</h4>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="/images/necklace_c1.jpg" width="140" height="140" class="rounded-circle" >
+          <h4>เครื่องประดับ</h4>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="/images/electronic_02.jpg" width="140" height="140" class="rounded-circle" > 
+          <h4>เครื่องใช้ไฟฟ้าและอิเล็กทรอนิกส์</h4>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="/images/furniture_c1.jpg" width="140" height="140" class="rounded-circle" > 
+          <h4>เฟอร์นิเจอร์และของตกแต่งบ้าน</h4>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="/images/toy_c1.jpg" width="140" height="140" class="rounded-circle" >
+          <h4>ของเล่นและของสะสม</h4>
+        </div>
+        
+        <div class="col-lg-4">
+          <a href="/allproducts">
+            <img src="/images/allproduct.jpg" width="140" height="140" class="rounded-circle">
+            <h4>รวมสินค้าทั้งหมด</h4>
+          </a>          
+        </div>
+      </div>
+      </div>
+
+      
+
+
+</main>
+<script>
+  async function loadTopWeekProducts(limit) {
+    let render = "";
+    const response = await fetch(`http://localhost:3000/products/top-week/`,
+    {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ limit: limit})
+    }
+    );
+    if(response.status == 200) {
+      const data = await response.json();
+      console.log(data);
+
+      for(const product of data) {
+        render += `
+          <div class="col-lg-4">
+            <img src="${product.image}" width="140" height="140" class="rounded-circle" alt="${product.image}">
+            <h4>${product.product_name}</h4>
+            <h5>${product.price}฿</h5>
+          </div>
+        `;
+      }
+      document.getElementById("top-week-container").innerHTML = render;
+    }
+  }
+  loadTopWeekProducts(3);
+
+  function handleSearch(event) {
+    event.preventDefault();
+    const searchTerm = document.getElementById('search-input').value;
+    window.location.href = `/searchs?product=${encodeURIComponent(searchTerm)}`;
+  }
+</script>
+<script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
+      <script>window.jQuery || document.write('<script src="/javascripts/jquery-3.3.1.slim.min.js"><\/script>')</script><script src="/javascripts/bootstrap.bundle.min.js""></script></body>
+</html>

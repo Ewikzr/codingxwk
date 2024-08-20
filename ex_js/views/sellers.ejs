@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SecondHand Market</title>
+    <link rel="canonical"
+        href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+    <link rel="stylesheet" href="/stylesheets/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-orange">
+            <a class="navbar-brand" href="/">SecondHand Market</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">หน้าแรก </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/carts">ตะกร้าสินค้า</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sellers">เริ่มต้นการขาย<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registers">ลงทะเบียน </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0"
+                    onsubmit="handleSearch(event)">
+                    <input class="form-control mr-sm-2" type="text"
+                        placeholder="ค้นหาสินค้า" aria-label="ค้นหาสินค้า"
+                        id="search-input">
+                    <button class="btn btn-outline-success my-2 my-sm-0"
+                        type="submit">ค้นหา</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        <div class="container marketing">
+            <div class="register">
+                <br><br>
+                <h3 class="text-center mb-4">ประกาศขายสินค้า</h3>
+                <form action="#" class="mx-auto" style="max-width: 400px;"
+                    method="POST" enctype="multipart/form-data">
+                    <div class="form-group mb-3 text-center">
+                        <div
+                            style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                            <div id="image-preview-container"
+                                style="display: flex; gap: 10px; justify-content: flex-start; flex-wrap: wrap;">
+                            </div>
+                            <div class="file-input-container"
+                                style="position: relative; display: inline-block; width: 200px; height: 200px; border: 1px solid #ccc; text-align: center;">
+                                <input type="file" id="products-picture"
+                                    name="products-picture[]" multiple
+                                    style="opacity: 0; position: absolute; width: 200px; height: 200px; z-index: 2; cursor: pointer;"
+                                    accept="image/*">
+                                <div
+                                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; display: flex; align-items: center; justify-content: center; pointer-events: none;">
+                                    <span style="font-size: 1.2rem;">+
+                                        เพิ่มรูปภาพ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control"
+                            name="product-name" placeholder="ชื่อสินค้า"
+                            required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <textarea class="form-control"
+                            name="product-description" placeholder="รายละเอียด"
+                            rows="3" required></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <select class="form-control" name="category" required>
+                            <option value="" disabled selected>เลือกหมวดหมู่
+                            </option>
+                            <option value="1">เครื่องแต่งกาย</option>
+                            <option value="2">เครื่องประดับ</option>
+                            <option value="3">เครื่องใช้ไฟฟ้าและอิเล็กทรอนิกส์
+                            </option>
+                            <option value="4">เฟอร์นิเจอร์และของตกแต่งบ้าน
+                            </option>
+                            <option value="5">ของเล่นและของสะสม</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="number" min="0.00" max="10000.00"
+                            step="1.00" class="form-control" name="price"
+                            placeholder="ราคา" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="number" min="0.00" max="10000.00"
+                            step="1.00" class="form-control"
+                            name="shipping-cost" placeholder="ค่าส่งสินค้า"
+                            required>
+                    </div>
+                    <button type="button" class="btn btn-warning w-100"
+                        onclick="validateForm()">เพิ่มสินค้าลงคลัง</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.getElementById('products-picture').addEventListener('change',
+            function(event) {
+                const imagePreviewContainer = document.getElementById(
+                    'image-preview-container');
+                imagePreviewContainer.innerHTML = '';
+                const files = event.target.files;
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imgElement = document.createElement(
+                            'img');
+                        imgElement.src = e.target.result;
+                        imgElement.style.maxWidth = '200px';
+                        imgElement.style.maxHeight = '200px';
+                        imgElement.style.border = '1px solid #ccc';
+                        imgElement.style.padding = '5px';
+                        imagePreviewContainer.appendChild(imgElement);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            function validateForm() {
+    const productName = document.querySelector('input[name="product-name"]').value.trim();
+    const category = document.querySelector('select[name="category"]').value;
+    const price = document.querySelector('input[name="price"]').value;
+
+    if (productName  && category && price) {
+
+        window.location.href = '/allproducts';
+    } else {
+        alert('กรุณากรอกข้อมูลให้ครบทุกช่อง');
+    }
+}
+    </script>
+    <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        window.jQuery || document.write(
+            '<script src="/javascripts/jquery-3.3.1.slim.min.js"><\/script>'
+        )
+    </script>
+    <script src="/javascripts/bootstrap.bundle.min.js""></script></body>
+</html>

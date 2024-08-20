@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SecondHand Market</title>
+    
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+    <link rel="stylesheet" href="/stylesheets/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-orange">
+        <a class="navbar-brand" href="/">SecondHand Market</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">หน้าแรก <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/carts">ตะกร้าสินค้า</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/registers">ลงทะเบียน</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+            </li>
+          </ul>
+          
+          <h4 class="header-text">Checkouts</h4>
+        </div>
+      </nav>
+    </header>
+    <main role="main">
+      <div class="container mt-5">
+        <!-- Delivery Address Section -->
+        <section class="content mb-4">
+          <div class="content-text">
+            <p id="content-text">Delivery Address</p>
+            <p id="content-address">
+              <b>นางสาว สมฤดี เจริญกรุง</b> (+66)99-999-9999  แมนชั่นเจริญกรุง 111 เขต 111 แขวง 111 จังหวัดกรุงเทพมหานคร
+              <div class="change-adds mt-2">Change Address</div>
+            </p>
+          </div>
+        </section>
+
+        <!-- Product Ordered Section -->
+        <section class="orders mb-4">
+        <p id="content-text">Product Ordered</p>
+          <div class="order-item d-flex justify-content-between align-items-center border p-3 mb-2">
+            <div class="order-details d-flex align-items-center">
+              <img src="./images/necklace_01.jpg" alt="necklace" class="img-thumbnail" width="500px">
+              <div class="ml-3">
+                <h2>ชื่อสินค้า: สร้อยคอผู้หญิง</h2>
+                <p>สร้อยคอ แฟชั่น สไตล์พังก์เท่ห์ เครื่องประดับ แฟชั่น สำหรับผู้หญิง</p>
+                <br/><br/><br/><br/>
+                <p>ร้านค้า : สมพร</p>
+              </div>
+            </div>
+            <div class="order-price">
+              <p style="font-weight: 900; font-size: larger;">฿199</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="payment mb-4">
+            <p id="payment-text">Payment Method:</p>
+            <div class="payment-options">
+              <label>
+                <input type="radio" name="payment" value="mobile-banking" class="btn btn-primary">
+                Mobile Banking
+              </label>
+              <label>
+                <input type="radio" name="payment" value="credit" class="btn btn-secondary" checked>
+                Credit
+              </label>
+              <label>
+                <input type="radio" name="payment" value="qr-code" class="btn btn-info">
+                QR Code
+              </label>
+            </div>
+          </section>
+          
+          
+
+        <!-- Summary Section -->
+        <section class="summary mb-4">
+          <p>Merchandise Subtotal: ฿199</p>
+          <p>Shipping Total: ฿0</p>
+          <p>Total Payment: <span id="price-total">฿199</span></p>
+        </section>
+
+        <!-- Place Order Section -->
+        <section class="place-order mb-4">
+          <a href="/payments"><button id="place-order-btn" class="btn btn-success btn-block">Place Order</button></a>
+        </section>
+      </div>
+    </main>
+    <script>
+
+    </script>
+    <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="/javascripts/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

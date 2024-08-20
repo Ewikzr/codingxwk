@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SecondHand Market</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+    <link rel="stylesheet" href="/stylesheets/carousel.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
+    <style>
+        .btn-orange {
+            background-color: #D27D2D;
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background-color: #b46926;
+            color: white;
+        }
+
+        .remove-button {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .remove-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-orange">
+            <a class="navbar-brand" href="/">SecondHand Market</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">หน้าแรก <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ตะกร้าสินค้า</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sellers">เริ่มต้นการขาย</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registers">ลงทะเบียน</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">เข้าสู่ระบบ</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0" onsubmit="handleSearch(event)">
+                    <input class="form-control mr-sm-2" type="text" placeholder="ค้นหาสินค้า" aria-label="ค้นหาสินค้า"
+                        id="search-input">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ค้นหา</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                        <input type="checkbox" class="mr-2" id="check1" data-price="199" onclick="calculateTotal()">
+                        <div>
+                            <strong>สมพร</strong>
+                            <p class="mb-0">สร้อยคอผู้หญิง</p>
+                            <p class="text-danger">฿199</p>
+                        </div>
+                        <img src="http://localhost:3000/images/necklace_01.jpg" alt="สร้อยคอผู้หญิง"
+                            class="ml-auto" style="width: 64px; height: 64px;">
+                        <div class="ml-3">
+                            <input type="number" class="form-control" value="1" min="1" style="width: 60px;"
+                                onchange="calculateTotal()" data-id="1">
+                        </div>
+                        <button class="remove-button ml-3" onclick="removeItem(this)">ลบ</button>
+                    </div>
+                </div>
+
+                <!-- <div class="card mb-4 shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                        <input type="checkbox" class="mr-2" id="check2" data-price="120" onclick="calculateTotal()">
+                        <div>
+                            <strong>เพ็ญประภา</strong>
+                            <p class="mb-0">เสื้อเชิ้ตแขนสั้น</p>
+                            <p class="text-danger">฿120</p>
+                        </div>
+                        <img src="http://localhost:3000/images/clothes_01.jpg" alt="เสื้อเชิ้ตแขนสั้น"
+                            class="ml-auto" style="width: 64px; height: 64px;">
+                        <div class="ml-3">
+                            <input type="number" class="form-control" value="1" min="1" style="width: 60px;"
+                                onchange="calculateTotal()" data-id="2">
+                        </div>
+                        <button class="remove-button ml-3" onclick="removeItem(this)">ลบ</button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="d-flex justify-content-between align-items-center">
+                            Total
+                            <span id="total-price" class="badge badge-secondary badge-pill">฿0</span>
+                        </h5>
+                    </div>
+                </div>
+                <button class="btn btn-orange btn-block" onclick="proceedToPayment()">ชำระเงิน <span id="item-count">(0)</span></button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function calculateTotal() {
+            let total = 0;
+            let itemCount = 0;
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    const price = parseFloat(checkbox.getAttribute('data-price'));
+                    const quantityInput = checkbox.parentElement.querySelector('input[type="number"]');
+                    const quantity = parseInt(quantityInput.value);
+
+                    total += price * quantity;
+                    itemCount += quantity;
+                }
+            });
+
+            document.getElementById('total-price').textContent = `฿${total}`;
+            document.getElementById('item-count').textContent = `(${itemCount})`;
+        }
+
+        function removeItem(button) {
+            const card = button.closest('.card');
+            card.remove();
+            calculateTotal();
+        }
+
+        function proceedToPayment() {
+            if (parseInt(document.getElementById('item-count').textContent.replace(/[()]/g, '')) > 0) {
+                window.location.href = '/checkouts';
+            } else {
+                alert("กรุณาเลือกสินค้าอย่างน้อยหนึ่งชิ้น");
+            }
+        }
+    </script>
+
+    <script src="/javascripts/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="/javascripts/jquery-3.3.1.slim.min.js"><\/script>')
+    </script>
+    <script src="/javascripts/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
